@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@sap-theming/theming-base-content": "^11.1.44",
+    "@sap-theming/theming-base-content": "^11.1.46",
     "core-js": "^3.8.3",
     "fundamental-styles": "^0.25.0",
     "vue": "^3.2.13"
