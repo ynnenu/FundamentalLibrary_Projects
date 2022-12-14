@@ -17,6 +17,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
 } from 'react-native';
 
 import { WebView } from 'react-native-webview';
@@ -32,18 +33,53 @@ import {
  * LTI update could not be added via codemod */
 class App extends Component {
   render() {
-    const customHTML = ` <html> <head>  <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /><link href=’https://unpkg.com/fundamental-styles@latest/dist/fundamental-styles.css' rel=’stylesheet’>
-    <link href=’https://unpkg.com/@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/css_variables.css' rel=’stylesheet’>
-    <link href=’https://unpkg.com/fundamental-styles@{versionNumber}/dist/theming/sap_horizon.css' rel=’stylesheet’></head>
+    const customHTML = ` <html> 
+    <head>  
+    <link href='https://unpkg.com/fundamental-styles@latest/dist/fundamental-styles.css' rel='stylesheet'>
+    <link href='https://unpkg.com/@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/css_variables.css' rel='stylesheet'>
 
+<style>
+
+@font-face {
+  font-family: "72";
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Bold-full.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "72";
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Light-full.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SAP-icons";
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/fonts/SAP-icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BusinessSuiteInAppSymbols';
+  src: url('~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/BusinessSuiteInAppSymbols.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SAP-icons-TNT';
+  src: url('~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/SAP-icons-TNT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 16px;
+ 
+}
+
+</style>
       <body style="display:flex; flex-direction: column;justify-content: center; 
         align-items:center; background-color: white; color:black; height: 100%;">
         
@@ -65,8 +101,9 @@ class App extends Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <WebView 
-          source={{ uri: "http://localhost:3000/" }} 
+          source={{ uri: "http://localhost:3000/"}} 
         />
+
       </SafeAreaView>
     );
   }
